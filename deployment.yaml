@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tiltdemo
+  labels:
+    app: tiltdemo
+spec:
+  selector:
+    matchLabels:
+      app: tiltdemo
+  template:
+    metadata:
+      labels:
+        app: tiltdemo
+    spec:
+      containers:
+      - name: tiltdemo
+        image: gcr.io/windmill-test-containers/tiltdemo
+        command: ["/go/bin/tiltdemo"]
+        ports:
+        - containerPort: 8000
