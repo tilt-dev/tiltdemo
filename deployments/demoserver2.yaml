@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demoserver2
+  labels:
+    app: demoserver2
+spec:
+  selector:
+    matchLabels:
+      app: demoserver2
+  template:
+    metadata:
+      labels:
+        app: demoserver2
+    spec:
+      containers:
+      - name: demoserver2
+        image: gcr.io/windmill-test-containers/tiltdemo/demoserver2
+        command: ["/go/bin/demoserver2"]
+        ports:
+        - containerPort: 8000
