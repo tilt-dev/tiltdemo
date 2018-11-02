@@ -9,7 +9,7 @@ def tiltdemo1():
       '/go/src/github.com/windmilleng/tiltdemo/cmd/demoserver1')
   run('go install github.com/windmilleng/tiltdemo/cmd/demoserver1')
   image = stop_build()
-  return k8s_service(yaml, image)
+  return k8s_service(image, yaml)
 
 def tiltdemo2():
   yaml = read_file('deployments/demoserver2.yaml')
@@ -20,7 +20,7 @@ def tiltdemo2():
       '/go/src/github.com/windmilleng/tiltdemo/cmd/demoserver2')
   run('go install github.com/windmilleng/tiltdemo/cmd/demoserver2')
   image = stop_build()
-  return k8s_service(yaml, image)
+  return k8s_service(image, yaml)
 
 def tiltdemo():
   return composite_service([tiltdemo1, tiltdemo2])
