@@ -1,5 +1,7 @@
 # -*- mode: Python -*-
 
+k8s_resource_assembly_version(2)
+
 repo = local_git_repo('.')
 
 # tiltdemo1
