@@ -10,9 +10,5 @@ func main() {
 		_, _ = w.Write([]byte(msg))
 	})
 
-	// panic("STARTUP_PANIC") // tilt:STARTUP_PANIC
-
-	// err = nil // tilt:BUILD_ERROR
-
 	_ = http.ListenAndServe(":8000", nil)
 }
